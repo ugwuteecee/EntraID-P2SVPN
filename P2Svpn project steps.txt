@@ -1,0 +1,18 @@
+EntraID-P2SVpn Project steps:
+
+Goal:
+A Solution that deploys an Azure VM that administrators can access securely over ssh. Allows remote internal web application access over point to site for authenticated users.
+
+Implememtation:
+Created a resource group, Storage account and blob container to store the state files in a secure way.
+Used the storage account and container to configure remote backend for the deployment terraform state files.
+Created the Vnets and the subnets as required for the VM, Bastion and Virual Network Gateway.
+Created the VPN gateway with the required config and P2S VPN Client authentication settings.
+Configured Diagnostics on the VNet to send logs to the Log Analytics Workspace already created.
+Created Users and Groups and assigned required roles to them for VPN access and VM administration.
+Used Azure Bastion to manage the VM while storing ssh secrets in an Azure Key Vault already created.
+Used RBAC to manage priviledges on the Azure Key Vault and VM
+Authentication to the web VM is by Microsoft Entra ensuring limited VM admin access.
+Used the P2S VPN for access to the web application installed on the virtual machine. 
+Allowed remote access by authenticated users to the company web application.
+Though this is a bit expensive compared to other simpler designs, yet frequent remote access to the VM by different Admin Users warranted the use of Bastion and Entra-ID authentication. 
