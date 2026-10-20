@@ -1,10 +1,10 @@
-export ARM_SUBSCRIPTION_ID="281a2917-86c2-45c9-983d-1c08c7c43bab"
+export ARM_SUBSCRIPTION_ID="<Subscription ID>"
 
 export TF_VAR_application_name="vpn"
 export TF_VAR_environment_name="dev"
 
 export BACKEND_RESOURCE_GROUP="rg-tfstate-dev"
-export BACKEND_STORAGE_ACCOUNT="sttfstatedev59i"
+export BACKEND_STORAGE_ACCOUNT="<storage account name>"
 export BACKEND_STORAGE_CONTAINER="maincont"
 export BACKEND_KEY=$TF_VAR_application_name-$TF_VAR_environment_name
   
