@@ -85,7 +85,7 @@ resource "azurerm_dev_test_global_vm_shutdown_schedule" "main" {
   notification_settings {
     enabled         = true
     time_in_minutes = 30
-    email           = "ugwutoscky@gmail.com"
+    email           = "<email address>"
   }
 }
 
